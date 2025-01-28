@@ -1,7 +1,7 @@
 #include <stdio.h>
 /*Scrivere una funzione chiamata "area_rettangolo" che prende in input la base e l'altezza di un rettangolo e restituisce l'area. 
 */
-
+//Mohamed Abdou 3H
 void area_rettangolo(int base, int altezza) {
     int area = base * altezza;
     printf("L'area del rettangolo è: %d\n", area);
