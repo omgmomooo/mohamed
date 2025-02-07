@@ -8,7 +8,7 @@ int main() {
     printf("inserici la base del rettangolo\n");
     scanf("%d",&base);
 
-    printf("inserici la altetza del triangolo");
+    printf("inserici la altetza del triangolo \n");
     scanf("%d",&altetza);
 
     area(base, altetza);
@@ -20,5 +20,5 @@ int main() {
 void area(int base, int altetza)
 {
     int area = base * altetza;
-    printf("%d",area);
+    printf(" laria del rettangolo e %d ",area);
 }
