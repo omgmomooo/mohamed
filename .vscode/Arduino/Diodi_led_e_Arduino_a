@@ -1,0 +1,123 @@
+/** ****************************************************************************************
+* \mainpage "Led base"
+* @brief Funzioni di base per la gestione di un LED collegato ad Arduino.
+* 
+* @author Filippo Bilardo
+* @version 1.0 01/01/22 Versione iniziale
+* @version 1.1 14/01/25 Aggiunti commenti Doxygen e ottimizzazioni
+*/
+
+//------------------------------------------------------------------------------------------
+//=== LOCAL FUNCTION PROTOTYPES ============================================================
+//------------------------------------------------------------------------------------------
+/** ****************************************************************************************
+* @brief Configurazione del pin dove è collegato il LED.
+* @author Filippo Bilardo
+* @version 1.0 01/01/22 Versione iniziale
+*/
+void led_configura();
+
+/** ****************************************************************************************
+* @brief Accensione del LED.
+* @author Filippo Bilardo
+* @version 1.0 01/01/22 Versione iniziale
+*/
+void led_accendi();
+
+/** ****************************************************************************************
+* @brief Spegnimento del LED.
+* @author Filippo Bilardo
+* @version 1.0 01/01/22 Versione iniziale
+*/
+void led_spegni();
+
+/** ****************************************************************************************
+* @brief Lampeggio del LED.
+*
+* @param  int nr: Numero di lampeggi.
+* @retval Nessuno.
+* @see led_accendi(), led_spegni()
+* @author Filippo Bilardo
+* @version 1.0 01/01/22 Versione iniziale
+*/
+void led_lampeggia(int nr);
+
+/** ****************************************************************************************
+* @brief Lampeggio del LED con durata personalizzata.
+*
+* @param  int numero: Numero di lampeggi.
+* @param  int durata: Durata in millisecondi di ciascun lampeggio.
+* @retval Nessuno.
+* @see led_accendi(), led_spegni()
+* @author Filippo Bilardo
+* @version 1.1 14/01/25 Aggiunta la possibilità di personalizzare il tempo di lampeggio.
+*/
+void led_lampeggia_tempo(int numero, int durata);
+
+/** ****************************************************************************************
+* @brief Inversione dello stato del LED.
+*
+* @retval Nessuno.
+* @author Filippo Bilardo
+* @version 1.1 14/01/25 Ottimizzata la gestione dello stato del LED.
+*/
+void led_inverti();
+
+//------------------------------------------------------------------------------------------
+//=== LOCAL CONSTANTS ======================================================================
+//------------------------------------------------------------------------------------------
+const int LED_PIN = 4;  // Pin a cui è collegato il LED
+bool luce = LOW;        // Stato attuale del LED (spento)
+
+//------------------------------------------------------------------------------------------
+//=== ARDUINO MAIN PROGRAM (setup e loop) ==================================================
+//------------------------------------------------------------------------------------------
+void setup() {
+  led_configura();
+  led_lampeggia(2);
+}
+
+void loop() {
+  led_inverti();
+  delay(200);
+}
+
+//------------------------------------------------------------------------------------------
+//=== FUNCTIONS DEFINITIONS ================================================================
+//------------------------------------------------------------------------------------------
+
+void led_configura() {
+  pinMode(LED_PIN, OUTPUT);
+  digitalWrite(LED_PIN, luce);
+}
+
+void led_inverti() {
+  if (luce) {
+    led_spegni();
+  } else {
+    led_accendi();
+  }
+}
+
+void led_accendi() {
+  digitalWrite(LED_PIN, HIGH);
+  luce = HIGH;
+}
+
+void led_spegni() {
+  digitalWrite(LED_PIN, LOW);
+  luce = LOW;
+}
+
+void led_lampeggia(int nr) {
+  led_lampeggia_tempo(nr, 200);
+}
+
+void led_lampeggia_tempo(int numero, int durata) {
+  for (int i = 0; i < numero; i++) {
+    led_accendi();
+    delay(durata);
+    led_spegni();
+    delay(durata);
+  }
+}

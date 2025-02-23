@@ -16,7 +16,6 @@ int main() {
     return 0;
 
 }
-
 void area(int base, int altetza)
 {
     int area = base * altetza;
