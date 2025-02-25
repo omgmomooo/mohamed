@@ -55,7 +55,7 @@ int prodotto_dispari(int x) {  // Utilizzo di x
     scanf("%d", &num);
     
     while (num != 0) {
-        if (num % 2 != 0) {
+        if (num % 2 == 1) {
             prodotto *= num;
         }
         printf("Inserisci un numero: ");
