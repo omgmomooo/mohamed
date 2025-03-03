@@ -1,19 +1,27 @@
 #include <stdio.h>
-int area_rettangolo(int x, int y);
-int main()
-{
+
+void stampaAsterischi(int numero); // Funzione per stampare asterischi
+
+int main() { 
+  int valoreInserito;
+
+  printf("Inserisci un numero positivo: ");
   
-    int base;
-     int altetza;
-      
-printf("inserici la base del rettangolo ");
-scanf("%d",&base);
-printf("inserci laltettza del rettangolo ");
-scanf("%d",&altetza);
+  do {
+    scanf("%d", &valoreInserito);
+    if (valoreInserito <= 0) {
+      printf("Errore: Inserisci un numero positivo!\n");
+    }
+  } while (valoreInserito <= 0);
+
+  stampaAsterischi(valoreInserito);
+
+  return 0;
 }
-int area_rettangolo(int x, int y)
-{
-    int risultato= x*y;
-    
-    return risultato;
+
+void stampaAsterischi(int numero) { 
+  for (int i = 0; i < numero; i++) {
+    printf("*");
+  }
+  printf("\n"); // Va a capo dopo la stampa degli asterischi
 }
