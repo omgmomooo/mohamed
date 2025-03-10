@@ -1,27 +1,22 @@
 #include <stdio.h>
+int somma_divisori(int x);
+int main(){
+    int num , r;
+printf("inserici un numero per calcolare");
+scanf("%d",&num);
+r=somma_divisori(num);
+printf("%d",r);
+return 0;
 
-void stampaAsterischi(int numero); // Funzione per stampare asterischi
-
-int main() { 
-  int valoreInserito;
-
-  printf("Inserisci un numero positivo: ");
-  
-  do {
-    scanf("%d", &valoreInserito);
-    if (valoreInserito <= 0) {
-      printf("Errore: Inserisci un numero positivo!\n");
-    }
-  } while (valoreInserito <= 0);
-
-  stampaAsterischi(valoreInserito);
-
-  return 0;
 }
+int somma_divisori(int x)
+{
+    int somma=0;
+    for(int i=1; i<=x;i++){
+        if(x%i==0){
+            somma+=i;
+            
 
-void stampaAsterischi(int numero) { 
-  for (int i = 0; i < numero; i++) {
-    printf("*");
-  }
-  printf("\n"); // Va a capo dopo la stampa degli asterischi
+        }
+    } return somma;
 }
