@@ -1,31 +1,23 @@
 #include <stdio.h>
 
-int ricercaLineare(int arr[], int n, int target); 
+int stampa(int x, int y);
 int main() {
-    int numeri[] = {3, 7, 1, 9, 5, 8, 2};
-    int n = sizeof(numeri) / sizeof(numeri[0]);
-    int target;
-
-    printf("Inserisci il numero da cercare: ");
-    scanf("%d", &target);
-
-    int risultato = ricercaLineare(numeri, n, target);
-
-    if (risultato != -1) {
-        printf("Elemento trovato all'indice %d\n", risultato);
-    } else {
-        printf("Elemento non trovato\n");
-    }
-
+    int num1;
+    int num2;
+    printf("inserici il primo numero");
+    scanf("%d\n",&num1);
+    printf("secondo numero");
+    scanf("%d\n",&num2);
+   printf("%d \n",stampa(num1, num2));
     return 0;
 }
 
+int stampa(int x, int y){
 
-int ricercaLineare(int arr[], int n, int target) {
-    for (int i = 0; i < n; i++) {
-        if (arr[i] == target) {
-            return i; // Ritorna l'indice dell'elemento trovato
-        }
-    }
-    return -1; // Ritorna -1 se l'elemento non è presente
+for(int i=x;i<y;i++){
+
+    printf("%d\n",i);
 }
+}
+
+

@@ -1,7 +1,3 @@
- Verificato il funzionamento del programma scriverne una seconda versione
-  che controlli la validità dei parametri inseriti (numeri non validi, operazione non supportate, …) 
-  ed eventualmente termini lo script con un messaggio e con un codice di errore.
-
 
 #!/bin/bash
 
