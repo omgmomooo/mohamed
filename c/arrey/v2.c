@@ -2,6 +2,7 @@
 Nel main si dichiarino 2 array di interi di dimensione N (con N costante uguale a 100) e si chiamino tutte le funzioni
 rispettando le indicazioni della traccia.
 Si scrivano le seguenti funzioni:
+
 1. void Carica(int v [ ], int x ): si inseriscano nell'array i primi N numeri pari maggiori di x. Il 2° parametro sia
 chiesto all'utente nel main: N.B. se l'utente inserisce un numero dispari si faccia nel main quanto necessario
 per passare il numero pari successivo
@@ -74,45 +75,6 @@ int main()
 
 
 v[i]=v[i-1]*(i+1)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
