@@ -1,23 +1,25 @@
 #include <stdio.h>
-
-#define MAX 50  // lunghezza del nome file
-
-using namespace std;
+#include <string.h>
+#include <time.h>
+#define MAX 50  
+struct studente{
+    char nome[MAX];
+    
+}
 
 int main() {
-    char nomeFileIN[MAX + 1];
-    char nomeFileOUT[MAX + 1];  // file destinazione
+   
     int err1, err2;
     char c;
     FILE *fileIn, *fileOut;
     
-    cout << "Nome del file da leggere: ";
-    cin >> "%s", nomeFileIN;
+    printf("Nome del file da leggere: ");
+    scanf( "%s", nomeFileIN);
     
-    cout << "Nome del file destinazione: ";
-    cin >> "%s", nomeFileOUT;
+    printf("Nome del file destinazione: ");
+    scanf( "%s", nomeFileOUT);
     
-    err1 = fopen_s(&fileIn, nomeFileIN, "r");
+    err1 = fopen_s(&fileIn, nomeFileIN, "r"); //riparte dal ultima lettera
     err2 = fopen_s(&fileOut, nomeFileOUT, "a");
     
     if ((err1 + err2) == 0) {  // ok apertura
@@ -29,9 +31,9 @@ int main() {
         fclose(fileOut);
     }
     else {
-        cout << "\nErrore in apertura file!";
+        printf("\nErrore in apertura file!");
     }
     
-    cout << "\n" << endl;
+    printf( "\n" );
     system("pause");
 }
